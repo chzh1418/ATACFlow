@@ -6,9 +6,13 @@ This document describes the output produced by the pipeline. Most of the plots a
 ## Pipeline overview
 The pipeline is built using [Nextflow](https://www.nextflow.io/)
 and processes data using the following steps:
-
+* [Trim_Galore](#trim_galore) - apply quality and adaptor tirmming to FastQ files.
 * [FastQC](#fastqc) - read quality control
 * [MultiQC](#multiqc) - aggregate report, describing results of the whole pipeline
+
+## Trim Galore
+[Trim_Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) requires Cutadapt and FastQC to trim adaptors as well as quality control. It can remove sequences if they are too short after trimming or if only one of the paired end reads survived after trimming. For further reading and documentation see the [Trim_Galore](http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)
+
 
 ## FastQC
 [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) gives general quality metrics about your reads. It provides information about the quality score distribution across your reads, the per base sequence content (%T/A/G/C). You get information about adapter contamination and other overrepresented sequences.
